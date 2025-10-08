@@ -12,8 +12,14 @@ public class freq_array {
         for(int i=0;i<arr.length;i++){
             freq_array[arr[i]]++;
         }
+        int[] query={2,3,4,5,6,7,8,9,10};
+        System.out.println("Frequency Array:");
         for(int i=0;i<freq_array.length;i++){
-            System.out.print(freq_array[i]+" ");
+            for(int q:query){
+                if(i==q){
+                    System.out.println(i+" -> "+freq_array[i]);
+                }
+            }
         }
     }
 }
