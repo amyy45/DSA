@@ -1,11 +1,10 @@
 package basic_hashing;
 
-import java.util.Arrays;
-import java.util.Map;
+import java.util.*;
 
 public class hash_map {
     static void freq(int arr[]) {
-        Map<Integer, Integer> map = new java.util.HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
         for(int i=0;i<arr.length;i++) {
             if(map.containsKey(arr[i])){
                 map.put(arr[i],map.get(arr[i])+1);
