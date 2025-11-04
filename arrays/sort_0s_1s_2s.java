@@ -24,8 +24,6 @@ public class sort_0s_1s_2s {
         }
     }
 
-    static void sort012(int )
-
     public static void main(String[] args) {
         ArrayList<Integer> arr = new ArrayList<>(Arrays.asList(2,0,1,2,0,1,1,0,2));
         sort012(arr);
