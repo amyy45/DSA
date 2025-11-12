@@ -6,6 +6,7 @@ public class longest_consecutive_seq {
         if(n==0) return 0;
         Arrays.sort(arr);
         int lastSmaller=Integer.MIN_VALUE;
+        System.out.println(lastSmaller);
         int count=0;
         int longest=1;
         for(int i=0;i<n;i++) {
