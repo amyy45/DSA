@@ -6,7 +6,6 @@ public class longest_consecutive_seq {
         if(n==0) return 0;
         Arrays.sort(arr);
         int lastSmaller=Integer.MIN_VALUE;
-        System.out.println(lastSmaller);
         int count=0;
         int longest=1;
         for(int i=0;i<n;i++) {
@@ -22,9 +21,31 @@ public class longest_consecutive_seq {
         return longest;
     }
 
+    static int longestSuccessiveElementsUsingSet(int nums[]) {
+        int n=nums.length;
+        if(n==0) return 0;
+        int longest=1;
+        Set<Integer> set=new HashSet<>();
+        for(int num:nums) {
+            set.add(num);
+        }
+        for(int it : set) {
+            if(!set.contains(it-1)) {
+                int cnt=1;
+                int i=it;
+                while(set.contains(i+1)) {
+                    cnt++;
+                    i++;
+                }
+                longest=Math.max(longest, cnt);
+            }
+        }
+        return longest;
+    }
+
     public static void main(String[] args) {
         int[] arr = {100, 4, 200, 1, 3, 2};
-        int result = longestSuccessiveElements(arr);
+        int result = longestSuccessiveElementsUsingSet(arr);
         System.out.println("Length of the longest consecutive elements sequence: " + result);
     }
 }
