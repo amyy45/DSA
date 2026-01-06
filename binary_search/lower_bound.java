@@ -3,8 +3,8 @@ public class lower_bound {
         int low=0;
         int high=nums.length-1;
         int ans=nums.length; // Default to length if target is greater than all elements
-        int mid=(low+high)/2;
         while(low<high) {
+            int mid=(low+high)/2;
             if(nums[mid]>=target) {
                 ans=mid;
                 high=mid-1;
