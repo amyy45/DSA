@@ -4,6 +4,14 @@ public class element_rotated_sorted_array_duplicate {
         while(low<=high) {
             int mid=(low+high)/2;
             if(nums[mid]==target) return true;
+            //if duplicates are present
+            else {
+                if(nums[low]==nums[mid] && nums[mid]==nums[high]) {
+                    low++;
+                    high--;
+                    continue;
+                } 
+            }
             //if left is sorted
             if(nums[low]<nums[mid]) {
                 //check if target lies in left
@@ -21,14 +29,6 @@ public class element_rotated_sorted_array_duplicate {
                 } else {
                     high=mid-1;
                 }
-            }
-            //if duplicates are present
-            else {
-                if(nums[low]==nums[mid] && nums[mid]==nums[high]) {
-                    low++;
-                    high--;
-                    continue;
-                } 
             }
         }
         return false;
