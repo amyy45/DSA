@@ -13,18 +13,18 @@ public class element_rotated_sorted_array_duplicate {
                 } 
             }
             //if left is sorted
-            if(nums[low]<nums[mid]) {
+            if(nums[low]<=nums[mid]) {
                 //check if target lies in left
-                if(target>=nums[low] && target<=nums[mid]) {
+                if(target>=nums[low] && target<nums[mid]) {
                     high=mid-1;
                 } else {
                     low=mid+1;
                 }
             }
             //if right is sorted
-            else if(nums[mid]<nums[high]) {
+            else {
                 //check if target lies in right
-                if(target>=nums[mid] && target<=nums[high]) {
+                if(target>nums[mid] && target<=nums[high]) {
                     low=mid+1;
                 } else {
                     high=mid-1;
