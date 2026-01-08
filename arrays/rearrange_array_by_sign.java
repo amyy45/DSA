@@ -20,10 +20,27 @@ public class rearrange_array_by_sign {
         return rev;
     }
     
-    //varient 2
+    //Optimized Approach
     static int[] rearrange2(int nums[]) {
-        int n = nums.length;
-        
+        int n=nums.length;
+        int[] rev=new int[n];
+        int index=0;
+        //first store positive elements
+        for(int i=0;i<n;i++) {
+            if(nums[i]>=0) {
+                rev[index]=nums[i];
+                index+=2;
+            }
+        }
+        index=1;
+        //then store negative elements
+        for(int i=0;i<n;i++) {
+            if(nums[i]<0) {
+                rev[index]=nums[i];
+                index+=2;
+            }
+        }
+        return rev;
     }
     public static void main(String[] args) {
         int nums[]={1,2,-3,-1,-2,-3};
