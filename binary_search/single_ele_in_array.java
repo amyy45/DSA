@@ -1,13 +1,14 @@
 public class single_ele_in_array {
     public static int searchSingleElement(int[] nums) {
-        int low=0,high=nums.length-1;
+        int n=nums.length;
         //when only one element 
-        if(nums.length==1) return nums[0];
+        if(n==1) return nums[0];
         //when first ele is unique
         if(nums[0]!=nums[1]) return nums[0];
         //when last ele is unique
-        if(nums[high]!=nums[high-1]) return nums[high];
-        while(low<high){
+        if(nums[n-1]!=nums[n-2]) return nums[n-1];
+        int low=1,high=n-2;
+        while(low<=high){
             int mid=(low+high)/2;
             if(nums[mid]!=nums[mid-1] && nums[mid]!=nums[mid+1]) {
                 return nums[mid];
@@ -24,7 +25,7 @@ public class single_ele_in_array {
     }
 
     public static void main(String[] args) {
-        int nums[]={1,1,2,2,3,3,4,5,5,6,6};
+        int nums[]={3,3,7,7,10,11,11};
         int result=searchSingleElement(nums);
         if(result!=-1) {
             System.out.println("The single element in the array is: " + result);
